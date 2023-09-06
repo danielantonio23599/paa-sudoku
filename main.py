@@ -1,16 +1,22 @@
-# This is a sample Python script.
+import argparse
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from util.Programa import Programa
+from util.Sudoku import Sudoku
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+parser = argparse.ArgumentParser()
+group = parser.add_mutually_exclusive_group()
+parser.add_argument('filename', help='Arquivo .txt')
+parser.add_argument('-head', dest='head', type=str, help='Customiza delimitadores do cabeçote')
+args = parser.parse_args()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# ------------------------ Simulador ----------------------------------------
+print('Jogo de Sudoku ver 1.0 - IFMG 2023')
+print('Desenvolvido como trabalho prático para a disciplina de PAA')
+print('Autores: Daniel Antônio de Sá')
+
+tabuleiro = Programa(args.filename).lerArquivoPrograma()
+
+print(tabuleiro)
+
+# mt = Sudoku(blocos, palavra, args.head)
