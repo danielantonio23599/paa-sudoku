@@ -2,6 +2,7 @@ import argparse
 
 from util.Programa import Programa
 from util.Sudoku import Sudoku
+from util.Teste import Teste
 
 
 parser = argparse.ArgumentParser()
@@ -11,12 +12,12 @@ parser.add_argument('-head', dest='head', type=str, help='Customiza delimitadore
 args = parser.parse_args()
 
 # ------------------------ Simulador ----------------------------------------
-print('Jogo de Sudoku ver 1.0 - IFMG 2023')
+print('Solver de Sudoku ver 1.0 - IFMG 2023')
 print('Desenvolvido como trabalho prático para a disciplina de PAA')
 print('Autores: Daniel Antônio de Sá')
 
 tabuleiro = Programa(args.filename).lerArquivoPrograma()
-
-print(tabuleiro)
-
-# mt = Sudoku(blocos, palavra, args.head)
+sudoku = Sudoku(tabuleiro.tabuleiro, 0, 0)
+sudoku.solver()
+teste = Teste(sudoku.tabuleiro)
+teste.validar()
