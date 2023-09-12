@@ -43,7 +43,12 @@ EXEMPLO DE SAÍDA (para a entrada acima):
 http://lipas.uwasa.fi/~timan/sudoku/sudokus.zip
 http://lipas.uwasa.fi/~timan/sudoku/
 
-# Entrega:
-Envie um arquivo comprimido (ZIP) contendo: o código-fonte do seu programa juntamente com um pequeno relatório (PDF) descrevendo sua abordagem e qualquer desafio que você enfrentou durante a implementação.
-Preferencialmente, opte por uma interface de linha de comando para seu programa. Não é necessário criar uma interface gráfica ou exibir a matriz e submatrizes formatadas. 
-Certifique-se de testar bem o seu programa com diferentes quebra-cabeças de Sudoku para garantir sua robustez.
+# solver-sudoku
+Solver do jogo de sudoku
+
+Como iniciar o programa:
+
+    python sudoku.py <arquivo>
+Exemplo: 
+    
+    python sudoku.py teste.txt

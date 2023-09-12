@@ -30,6 +30,7 @@ class Sudoku:
                 self.tabuleiro[linha][coluna] = escolha
                 self.linha, self.coluna = self.proximo()
                 self.solver()
+                # verifica se já encontrou o tabuleiro valido, caso sim, retorna o mesmo.
                 if self.para:
                     return self.tabuleiro
                 else:
@@ -42,6 +43,7 @@ class Sudoku:
             if self.is_valid_sudoku(self.tabuleiro):
                 print()
                 print(self.__str__())
+                # define a variavel para que o tabuleiro não seja desfeito e retorne o atual.
                 self.para = True
                 return
             self.linha, self.coluna = self.proximo()
